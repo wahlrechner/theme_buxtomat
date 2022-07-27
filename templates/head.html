@@ -1,3 +1,7 @@
-<link rel="stylesheet" href="/static/styles.css">
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon-buxtomat.ico">
-<meta name="google-site-verification" content="RqVR1CORymNOr5VEFEyhnCJe58HmeWzjFnDD-pa_5nc" />
+{% load static %}
+
+<link rel="stylesheet" href="{% static "styles.css" %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static "favicon-buxtomat.ico" %}">
+
+{# Verfifizierung für Google Search Console #}
+<meta name="google-site-verification" content="RqVR1CORymNOr5VEFEyhnCJe58HmeWzjFnDD-pa_5nc"/>
