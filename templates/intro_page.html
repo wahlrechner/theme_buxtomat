@@ -1,6 +1,13 @@
 {% load wahlrechner_name %}
 
 <h1>Willkommen beim {% wahlrechner_name %}</h1>
+
+{% if not thesen.first %}
+    <div class="infobox mb-4">
+        Der {% wahlrechner_name %} ist noch in Vorbereitung und demnächst auf dieser Seite verfügbar.
+    </div>
+{% endif %}
+
 <p>
     Am 12. September 2021 findet die niedersächsische Kommunalwahl stattfinden, bei der auch der Buxtehuder Stadtrat
     neu gewählt wird. Der Stadtjugendring Buxtehude e.V. bietet eine Plattform, auf der du deine Ansichten mit den
@@ -21,9 +28,11 @@
     </i>
 </p>
 
-<div class="infobox">
-    Der {% wahlrechner_name %} sammelt keinerlei personenbezogene Daten und verwendet keine Cookies.
-    Indem du auf "Start" klickst, stimmt du den
-    <a class="underline" href="https://www.sjr-stade.de/impressum.html#a145">Datenschutzbedingungen</a>
-    zu.
-</div>
+{% if thesen.first %}
+    <div class="infobox">
+        Der {% wahlrechner_name %} sammelt keinerlei personenbezogene Daten und verwendet keine Cookies.
+        Indem du auf "Start" klickst, stimmt du den
+        <a class="underline" href="https://www.sjr-stade.de/impressum.html#a145">Datenschutzbedingungen</a>
+        zu.
+    </div>
+{% endif %}
